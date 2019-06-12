@@ -1,0 +1,29 @@
+
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="col-md-12"style="margin-top:30px; text-align:right">
+    <button type="button" class="btn btn-success" [routerLink]="['/createEmployee']">New</button>
+  </div>
+  <table class="table" style="margin-top:30px;">
+
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Birthday</th>
+        <th scope="col">Pay</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employeeList.employes">
+        <td>{{employee.name}}</td>
+        <td>{{employee.lastname}}</td>
+        <td>{{employee.birthday}}</td>
+        <td><span class="badge badge-pill badge-light">${{employee.pay}}</span></td>
+        <td><button type="button" class="btn btn-secondary disabled">Edit</button><button type="button" class="btn btn-danger disabled">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
